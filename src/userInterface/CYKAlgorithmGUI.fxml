@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="971.0" prefWidth="829.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CYKAlgorithmController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="879.0" prefWidth="829.0" style="-fx-background-color: #dfe6df;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CYKAlgorithmController">
    <top>
       <BorderPane prefHeight="32.0" prefWidth="829.0" BorderPane.alignment="CENTER">
          <center>
@@ -32,17 +32,17 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="62.0" prefWidth="827.0">
                      <children>
-                        <JFXTextField fx:id="tfStringW" alignment="CENTER" focusColor="#36b351" prefHeight="31.0" prefWidth="433.0" promptText="Ingrese una cadena  w. ej: ab, aab" style="-fx-background-color: #e0ebdf;" />
+                        <JFXTextField fx:id="tfStringW" alignment="CENTER" focusColor="#36b351" prefHeight="31.0" prefWidth="433.0" promptText="Ingrese una cadena  w. ej: ab, aab" style="-fx-background-color: #F4F4F4;" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" spacing="50.0">
                      <children>
-                        <JFXButton onAction="#addStringWHandler" style="-fx-background-color: #36b351;" text="Agregar Cadena">
+                        <JFXButton onAction="#newStringWHandler" style="-fx-background-color: #36b351;" text="Cambiar Cadena">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton onAction="#cleanStringWHandler" style="-fx-background-color: #cc3d35;" text="Borrar Cadena">
+                        <JFXButton onAction="#cleanAllHandler" style="-fx-background-color: #cc3d35;" text="Borrar Todo">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
@@ -71,10 +71,13 @@
          <bottom>
             <VBox alignment="CENTER" BorderPane.alignment="CENTER">
                <children>
-                  <ScrollPane prefHeight="469.0" prefWidth="829.0" />
-                  <VBox fx:id="matrixCYKVBox" alignment="CENTER">
+                  <ScrollPane hvalue="0.5" prefHeight="397.0" prefWidth="829.0" vvalue="0.5">
+                     <content>
+                        <VBox fx:id="vbMatrixCYK" alignment="CENTER" prefHeight="389.0" prefWidth="827.0" />
+                     </content></ScrollPane>
+                  <VBox alignment="CENTER">
                      <children>
-                        <Text fx:id="txPrintIsGenerate" strokeType="OUTSIDE" strokeWidth="0.0" />
+                        <JFXTextField fx:id="tfPrintIsGenerate" />
                      </children>
                   </VBox>
                </children>
@@ -85,11 +88,11 @@
    <center>
       <BorderPane prefHeight="289.0" prefWidth="829.0" BorderPane.alignment="CENTER">
          <center>
-            <ScrollPane prefHeight="191.0" prefWidth="829.0" BorderPane.alignment="CENTER">
+            <ScrollPane hvalue="0.5" prefHeight="191.0" prefWidth="829.0" vvalue="0.5" BorderPane.alignment="CENTER">
               <content>
-                  <VBox alignment="CENTER">
+                  <VBox alignment="CENTER" prefHeight="205.0" prefWidth="822.0">
                      <children>
-                        <VBox fx:id="vbGrammar" alignment="CENTER" />
+                        <VBox fx:id="vbGrammar" alignment="CENTER" prefHeight="0.0" prefWidth="0.0" />
                      </children>
                   </VBox>
               </content>
@@ -98,12 +101,7 @@
          <bottom>
             <HBox alignment="CENTER" prefHeight="48.0" prefWidth="829.0" spacing="50.0" BorderPane.alignment="CENTER">
                <children>
-                  <JFXButton onAction="#addProductionHandler" ripplerFill="WHITE" style="-fx-background-color: #36b351;" text="Agregar Nueva Producción">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton onAction="#cleanGICHandler" ripplerFill="#ab192a" style="-fx-background-color: #cc3d35;" text="Borrar GIC">
+                  <JFXButton onAction="#addProductionHandler" ripplerFill="BLACK" style="-fx-background-color: #36b351;" text="Agregar Nueva Producción">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>

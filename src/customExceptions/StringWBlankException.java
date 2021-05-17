@@ -5,8 +5,8 @@ import javafx.scene.control.ButtonType;
 
 public class StringWBlankException extends Exception{
 
-    public StringWBlankException(String message){
-        super(message);
+    public StringWBlankException(){
+        super("Debe ingresar una cadena w válida.");
     }
 
     public void message(){
