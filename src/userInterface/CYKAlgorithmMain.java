@@ -7,18 +7,32 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+/**
+ * Es la entidad que representa el lanzador de la aplicación,
+ * @author elias
+ */
+
 public class CYKAlgorithmMain extends Application {
 
+    /**
+     * Inicializa la GUI
+     * @param primaryStage
+     * @throws Exception
+     */
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("CYKAlgorithmGUI.fxml"));
         primaryStage.getIcons().add(new Image("resourses/matrix-desktop.png"));
-        primaryStage.setTitle("");
+        primaryStage.setFullScreen(false);
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
 
 
+    /**
+     * Lanza la aplicación
+     * @param args
+     */
     public static void main(String[] args) {
         launch(args);
     }
