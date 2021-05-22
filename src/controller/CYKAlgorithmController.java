@@ -1,5 +1,6 @@
 package controller;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import customExceptions.NoGrammarException;
 import customExceptions.StringWBlankException;
@@ -21,13 +22,14 @@ import java.util.ResourceBundle;
 /**
  * Es la entidad que representa el controlador de la aplicación.
  * Realiza el enlace entre el modelo y la GUI
+ * @author elias
  */
 public class CYKAlgorithmController implements Initializable {
 
     // -------- Constantes -----------------------
 
     /**
-     * Inidica una terminal vacía.
+     * Indica una terminal vacía.
      */
     public static final String LAMBDA = "λ";
 
@@ -49,6 +51,23 @@ public class CYKAlgorithmController implements Initializable {
      * Conjunto de cajas de texto para ingresar variables y sus producciones.
      */
     @FXML private VBox vbGrammar;
+    /**
+     * Botón para agregar nuevas producciones.
+     */
+    @FXML private JFXButton btAddProduction;
+    /**
+     * Botón para cambiar la cadena w.
+     */
+    @FXML private JFXButton btNewStringW;
+    /**
+     * Botón para limpiar la interfaz gráfica.
+     */
+    @FXML private JFXButton btCleanAll;
+    /**
+     * Botón para ejecutar el algoritmo
+     */
+    @FXML
+    private JFXButton btExecuteCYK;
 
     /**
      * Es la relación hacia el modelo.
@@ -66,6 +85,9 @@ public class CYKAlgorithmController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         createNewProduction();
+        btNewStringW.setDisable(true);
+        //btCleanAll.setDisable(true);
+        //btExecuteCYK.setDisable(true);
     }
 
 
@@ -92,6 +114,8 @@ public class CYKAlgorithmController implements Initializable {
      */
     @FXML
     public void cleanAllHandler(ActionEvent actionEvent) {
+        btAddProduction.setDisable(false);
+        btNewStringW.setDisable(true);
         vbGrammar.getChildren().clear();
         tfStringW.clear();
         vbMatrixCYK.getChildren().clear();
@@ -111,6 +135,8 @@ public class CYKAlgorithmController implements Initializable {
     @FXML
     public void executeCYK(ActionEvent actionEvent) {
         try {
+            btAddProduction.setDisable(true);
+            btNewStringW.setDisable(false);
             checkGrammar();
             checkTextString();
             vbMatrixCYK.getChildren().clear();

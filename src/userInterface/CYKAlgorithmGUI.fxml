@@ -37,17 +37,17 @@
                         </HBox>
                         <HBox alignment="CENTER" spacing="50.0">
                             <children>
-                                <JFXButton onAction="#newStringWHandler" style="-fx-background-color: #36b351;" text="Cambiar Cadena">
+                                <JFXButton fx:id="btNewStringW" onAction="#newStringWHandler" style="-fx-background-color: #36b351;" text="Cambiar Cadena">
                                     <font>
                                         <Font name="System Bold" size="15.0" />
                                     </font>
                                 </JFXButton>
-                                <JFXButton onAction="#cleanAllHandler" style="-fx-background-color: #cc3d35;" text="Borrar Todo">
+                                <JFXButton fx:id="btCleanAll" onAction="#cleanAllHandler" style="-fx-background-color: #cc3d35;" text="Borrar Todo">
                                     <font>
                                         <Font name="System Bold" size="15.0" />
                                     </font>
                                 </JFXButton>
-                                <JFXButton onAction="#executeCYK" style="-fx-background-color: #22c1c7;" text="Ejecutar CYK">
+                                <JFXButton fx:id="btExecuteCYK" onAction="#executeCYK" style="-fx-background-color: #22c1c7;" text="Ejecutar CYK">
                                     <font>
                                         <Font name="System Bold" size="15.0" />
                                     </font>
@@ -102,7 +102,7 @@
             <bottom>
                 <HBox alignment="CENTER" prefHeight="48.0" prefWidth="829.0" spacing="50.0" BorderPane.alignment="CENTER">
                     <children>
-                        <JFXButton onAction="#addProductionHandler" ripplerFill="BLACK" style="-fx-background-color: #36b351;" text="Agregar Nueva Producción">
+                        <JFXButton fx:id="btAddProduction" onAction="#addProductionHandler" ripplerFill="BLACK" style="-fx-background-color: #36b351;" text="Agregar Nueva Producción">
                             <font>
                                 <Font name="System Bold" size="15.0" />
                             </font>
